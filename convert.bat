@@ -1,0 +1,1 @@
+for %%a in (*.mp4) DO ffmpeg -i "%%a" -c:v libx264 -crf 23 -preset fast -c:a copy "output\%%~na_avc.mp4"
