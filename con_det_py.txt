@@ -1,0 +1,66 @@
+Proxy details:
+SSH port 22
+SSH host 10.116.196.227
+Tomcat Manager Username: tomcat
+Tomcat Manager Password: tomcat
+OpenLDAP details
+    Username: cn=root,c=uk
+    Password: ipstest
+    Client cert: /etc/openldap/certs/client.crt
+    Client key: /etc/openldap/certs/client.key
+Database node (10.116.215.37):
+10.116.215.37:1521 - IPS_TXN schema, Service Name: oradb.private, user: IPSTXN_OWNER, pass: ips
+10.116.215.37:1521 - IPS_DW schema, Service Name: oradb.private, user: IPSDW_OWNER, pass: ips
+Service node 1 (10.116.218.98):
+http://10.116.218.98:9080/manager - Tomcat console for backoffice 1
+http://10.116.218.98:29080/maps/ - maps_1
+http://10.116.218.98:39080/maps/ips-payments/ - maps_1
+http://10.116.218.98:25104/ips-bsp/ - bsp service
+http://10.116.218.98:25104/ips-bsp/settlement/history - service check url
+http://10.116.218.98:8095/gaw - GoAnywhere pretender
+10.116.218.98:9080 - backoffice 1 service port
+10.116.218.98:5672 - RabbitMQ 1 service port
+http://10.116.218.98:15672 - RabbitMQ 1 admin UI
+Also has switch 1
+Service node 2 (10.116.202.119):
+http://10.116.202.119:29080/maps/ - maps_2
+http://10.116.202.119:39080/maps/ips-payments/ - maps_2
+http://10.116.202.119:7081/ips-dsp/ - dsp service
+10.116.202.119:7041 - transformer 1 service port
+10.116.202.119:5672 - RabbitMQ 2 service port
+http://10.116.202.119:15672 - RabbitMQ 2 admin UI
+10.116.202.119:389 - OpenLDAP unencrypted
+10.116.202.119:636 - OpenLDAP mTLS
+Also has switch 2
+
+Service node 3 (10.116.203.136):
+http://10.116.203.136:9080/manager - Tomcat console for backoffice 2
+http://10.116.203.136:29080/maps/ - maps_3
+http://10.116.203.136:39080/maps/ips-payments/ - maps_3
+http://10.116.203.136:25104/ips-bsp/ - bsp service
+http://10.116.203.136:25104/ips-bsp/settlement/history - service check url
+10.116.203.136:9080 - backoffice 2 service port
+10.116.203.136:5672 - RabbitMQ 3 service port
+http://10.116.203.136:15672 - RabbitMQ 3 admin UI
+Also has switch 3
+
+Service node 4 (10.116.219.52):
+http://10.116.219.52:29080/maps/- maps_4
+http://10.116.219.52:39080/maps/ips-payments/- maps_4
+http://10.116.219.52:7081/ips-dsp/ - dsp service
+10.116.219.52:5672 - RabbitMQ 4 service port
+http://10.116.219.52:15672 - RabbitMQ 4 admin UI
+10.116.219.52:389 - OpenLDAP unencrypted
+10.116.219.52:636 - OpenLDAP mTLS
+Also has switch 4
+
+Simulator / UI node (10.116.196.227):
+https://10.116.196.227:8480/ips-console/ - IPS ops UI (mc-connect enabled)
+http://10.116.196.227:9080/ips-console/ - IPS ops UI (mc-connect disabled)
+http://10.116.196.227:9080/manager - Tomcat console for Ops UI
+https://10.116.196.227:8480/loopback - Fake Webseal
+https://10.116.196.227:8443/auth - Keycloak
+See https://confluence.mcvl-engineering.com/display/EMT/Testing+SSO+in+AWS for details of the
+single sign-on configuration.
+
+
